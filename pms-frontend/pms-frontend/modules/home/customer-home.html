@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home — Parcel Management System</title>
+  <link rel="stylesheet" href="../shared/navbar.css">
+  <link rel="stylesheet" href="customer-home.css">
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <div class="container">
+    <div class="card welcome-card">
+      <h1 id="dashboard-greeting">Welcome back</h1>
+      <p>Here's what you can do from your dashboard.</p>
+    </div>
+
+    <h2 class="section-title">Quick Actions</h2>
+    <div class="action-grid">
+      <a class="action-card" href="../booking/booking.html">
+        <div class="action-image">
+          <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bg1" x1="0" y1="0" x2="300" y2="150" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2563eb"/>
+                <stop offset="1" stop-color="#60a5fa"/>
+              </linearGradient>
+            </defs>
+            <rect width="300" height="150" fill="url(#bg1)"/>
+            <circle cx="255" cy="20" r="55" fill="#ffffff" opacity="0.06"/>
+            <circle cx="20" cy="140" r="40" fill="#ffffff" opacity="0.06"/>
+            <g transform="translate(105,35)">
+              <path d="M45 6 L84 22 L45 38 L6 22 Z" fill="#ffffff"/>
+              <path d="M6 22 L45 38 L45 84 L6 68 Z" fill="#dbeafe"/>
+              <path d="M84 22 L45 38 L45 84 L84 68 Z" fill="#bfdbfe"/>
+              <path d="M45 6 L84 22 L45 38 L6 22 Z" stroke="#1d4ed8" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M6 22 L45 38 L45 84 L6 68 Z" stroke="#1d4ed8" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M84 22 L45 38 L45 84 L84 68 Z" stroke="#1d4ed8" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M20 16 L64 32" stroke="#1d4ed8" stroke-width="1.5" opacity="0.5"/>
+            </g>
+          </svg>
+        </div>
+        <h3>Book a Parcel</h3>
+        <p>Start a new pickup or drop-off booking.</p>
+      </a>
+      
+      <a class="action-card" href="../tracking/tracking-customer.html">
+        <div class="action-image">
+          <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bg2" x1="0" y1="0" x2="300" y2="150" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#3b82f6"/>
+                <stop offset="1" stop-color="#93c5fd"/>
+              </linearGradient>
+            </defs>
+            <rect width="300" height="150" fill="url(#bg2)"/>
+            <circle cx="30" cy="25" r="45" fill="#ffffff" opacity="0.06"/>
+            <circle cx="270" cy="130" r="50" fill="#ffffff" opacity="0.06"/>
+            <path d="M40 120 Q150 60 260 100" stroke="#ffffff" stroke-width="2" stroke-dasharray="4 6" fill="none" opacity="0.55"/>
+            <circle cx="40" cy="120" r="4" fill="#ffffff"/>
+            <circle cx="260" cy="100" r="4" fill="#ffffff"/>
+            <g transform="translate(126,30)">
+              <path d="M24 0C11 0 0 10.6 0 23.5C0 41 24 68 24 68C24 68 48 41 48 23.5C48 10.6 37 0 24 0Z" fill="#ffffff"/>
+              <circle cx="24" cy="23" r="11" fill="#2563eb"/>
+            </g>
+          </svg>
+        </div>
+        <h3>Track Shipment</h3>
+        <p>Check the status of a parcel with its Booking ID.</p>
+      </a>
+      
+      <a class="action-card" href="../history/history-customer.html">
+        <div class="action-image">
+          <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bg3" x1="0" y1="0" x2="300" y2="150" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2563eb"/>
+                <stop offset="1" stop-color="#7dd3fc"/>
+              </linearGradient>
+            </defs>
+            <rect width="300" height="150" fill="url(#bg3)"/>
+            <circle cx="260" cy="15" r="50" fill="#ffffff" opacity="0.06"/>
+            <circle cx="15" cy="140" r="40" fill="#ffffff" opacity="0.06"/>
+            <g transform="translate(112,22)">
+              <rect x="0" y="8" width="76" height="98" rx="8" fill="#ffffff"/>
+              <rect x="24" y="0" width="28" height="16" rx="5" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5"/>
+              <rect x="14" y="32" width="48" height="6" rx="3" fill="#93c5fd"/>
+              <rect x="14" y="46" width="48" height="6" rx="3" fill="#bfdbfe"/>
+              <rect x="14" y="60" width="32" height="6" rx="3" fill="#bfdbfe"/>
+              <circle cx="18" cy="80" r="4.5" fill="#16a34a"/>
+              <rect x="30" y="77" width="32" height="6" rx="3" fill="#bfdbfe"/>
+            </g>
+          </svg>
+        </div>
+        <h3>Previous Bookings</h3>
+        <p>Review your past bookings and their status.</p>
+      </a>
+    </div>
+  </div>
+
+  <script src="../shared/pms-helpers.js"></script>
+  <script src="../shared/navbar.js"></script>
+  <script src="customer-home.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking — Parcel Management System</title>
+  
+  <!-- Include the centralized navbar CSS -->
+  <link rel="stylesheet" href="../shared/navbar.css">
+  <link rel="stylesheet" href="tracking-officer.css">
+</head>
+<body>
+
+  <!-- Dynamic Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>Search Shipments</h2>
+      <form id="tracking-form" novalidate>
+        <div class="search-grid">
+          <div class="form-group">
+            <label for="customerId">Customer ID</label>
+            <input type="text" id="customerId" placeholder="Customer ID">
+          </div>
+          <div class="form-group">
+            <label for="bookingId">Booking ID</label>
+            <input type="text" id="bookingId" placeholder="Booking ID">
+          </div>
+          <button type="submit" id="search-btn">Search</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>All Shipped Packages</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Booking ID</th>
+            <th>Customer ID</th>
+            <th>Receiver</th>
+            <th>Status</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="tracking-table-body"></tbody>
+      </table>
+      <p id="no-results">No bookings match your search.</p>
+    </div>
+
+  </div>
+
+  <script src="../shared/pms-helpers.js"></script>
+  <!-- Include the centralized navbar JS -->
+  <script src="../shared/navbar.js"></script>
+  <script src="tracking-officer.js"></script>
+</body>
+</html>

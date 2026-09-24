@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register — Parcel Management System</title>
+  
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="register-header">
+      <h1>Create your account</h1>
+      <p>Register as a customer to start booking parcels</p>
+    </div>
+
+    <div class="card">
+
+      <form id="register-form" novalidate>
+
+        <fieldset>
+          <legend>1. Personal Information</legend>
+
+          <div class="form-group">
+            <label for="name">Customer Name</label>
+            <input type="text" id="name" name="name" placeholder="Full name" maxlength="50">
+            <span class="field-hint">Maximum 50 characters</span>
+            <span class="error-msg" id="name-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+            <span class="error-msg" id="email-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <div class="mobile-row">
+              <select id="countryCode" name="countryCode">
+                <option value="+91">+91 (IN)</option>
+                <option value="+1">+1 (US)</option>
+                <option value="+44">+44 (UK)</option>
+                <option value="+61">+61 (AU)</option>
+                <option value="+971">+971 (UAE)</option>
+              </select>
+              <div class="form-group" style="margin-bottom:0;">
+                <input type="text" id="mobile" name="mobile" placeholder="10-digit number" maxlength="10">
+              </div>
+            </div>
+            <span class="error-msg" id="mobile-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="3" placeholder="Complete mailing address, including ZIP code and parcel code"></textarea>
+            <span class="error-msg" id="address-error"></span>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Username and Password</legend>
+
+          <div class="form-group">
+            <label for="userId">User ID</label>
+            <input type="text" id="userId" name="userId" placeholder="Choose a User ID">
+            <span class="field-hint">5–20 characters</span>
+            <span class="error-msg" id="userId-error"></span>
+          </div>
+
+          <div class="field-row">
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="Create a password">
+              <span class="field-hint">Max 30 chars; needs upper, lower, special character</span>
+              <span class="error-msg" id="password-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password">
+              <span class="error-msg" id="confirmPassword-error"></span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. Preferences</legend>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="prefEmailUpdates" name="prefEmailUpdates">
+            <label for="prefEmailUpdates">Send me email notifications about my deliveries</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="prefSmsUpdates" name="prefSmsUpdates">
+            <label for="prefSmsUpdates">Send me SMS notifications about my deliveries</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="prefEcoPackaging" name="prefEcoPackaging">
+            <label for="prefEcoPackaging">Prefer eco-friendly packaging by default</label>
+          </div>
+        </fieldset>
+
+        <div class="alert-error" id="form-error" style="display:none; margin-bottom: 12px;"></div>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-btn">Register</button>
+          <button type="reset" id="reset-btn">Reset</button>
+        </div>
+      </form>
+
+      <div id="registration-ack">
+        <div class="ack-icon">&#10003;</div>
+        <span class="alert-success">Consumer Registration successful.</span>
+        <dl class="ack-detail">
+          <dt>Username</dt>
+          <dd id="ack-username"></dd>
+          <dt>Customer Name</dt>
+          <dd id="ack-name"></dd>
+          <dt>Email</dt>
+          <dd id="ack-email"></dd>
+        </dl>
+        <a href="login.html">Go to Login &rarr;</a>
+      </div>
+
+    </div>
+
+    <p class="login-link">Already have an account? <a href="login.html">Log in</a></p>
+  </div>
+
+  <script src="../shared/pms-helpers.js"></script>
+  <script src="register.js"></script>
+</body>
+</html>

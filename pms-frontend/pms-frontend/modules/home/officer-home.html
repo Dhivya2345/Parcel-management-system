@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home — Parcel Management System</title>
+  
+  <link rel="stylesheet" href="../shared/navbar.css">
+  <link rel="stylesheet" href="officer-home.css">
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <div class="container">
+
+    <div class="card welcome-card">
+      <h1 id="dashboard-greeting">Welcome back</h1>
+      <p>Here's what you can do from your dashboard.</p>
+      <span class="role-badge">Officer</span>
+    </div>
+
+    <h2 class="section-title">Quick Actions</h2>
+    <div class="action-grid">
+
+      <a class="action-card" href="../tracking/tracking-officer.html">
+        <div class="action-icon">&#128205;</div>
+        <h3>Track Shipments</h3>
+        <p>View all shipped packages and search by customer or booking.</p>
+      </a>
+
+      <a class="action-card" href="../delivery/delivery-update.html">
+        <div class="action-icon">&#128666;</div>
+        <h3>Update Delivery Status</h3>
+        <p>Mark a booking as Picked up, In Transit, Delivered, or Returned.</p>
+      </a>
+
+      <a class="action-card" href="../delivery/delivery-update.html">
+        <div class="action-icon">&#128197;</div>
+        <h3>Pickup Scheduling</h3>
+        <p>Manage upcoming pickups for booked parcels.</p>
+      </a>
+
+      <a class="action-card" href="../history/history-officer.html">
+        <div class="action-icon">&#128203;</div>
+        <h3>Previous Bookings</h3>
+        <p>Look up booking history by customer and date range.</p>
+      </a>
+
+    </div>
+  </div>
+
+  <script src="../shared/pms-helpers.js"></script>
+  <script src="../shared/navbar.js"></script>
+  <script src="officer-home.js"></script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+/* ---- PMS Base Styles — paste verbatim at top of every module .css file ---- */
+:root {
+  --primary: #2563eb;
+  --success: #16a34a;
+  --error:   #dc2626;
+  --text:    #1f2937;
+  --bg:      #f9fafb;
+  --sp:      16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: var(--text); }
+nav#main-nav { background: var(--primary); display: flex; align-items: center; justify-content: space-between; padding: 0 var(--sp); }
+nav#main-nav a { color: #fff; text-decoration: none; padding: 14px var(--sp); display: inline-block; }
+nav#main-nav a:hover { background: rgba(0,0,0,0.2); }
+#welcome-user { color: #fff; padding: 14px var(--sp); }
+button { background: var(--primary); color: #fff; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; font-size: 1rem; }
+button:hover { opacity: 0.9; }
+input, select, textarea { width: 100%; padding: 8px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+input.invalid, select.invalid { border-color: var(--error); }
+.error-msg { color: var(--error); font-size: 0.82em; margin-top: 2px; display: block; }
+.alert-success { color: var(--success); font-weight: bold; }
+.alert-error   { color: var(--error);   font-weight: bold; }
+.container { max-width: 900px; margin: 30px auto; padding: 0 var(--sp); }
+.card { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 24px; margin-bottom: 20px; }
+label { display: block; margin-bottom: 4px; font-weight: 500; }
+.form-group { margin-bottom: 16px; }
+/* ---- end PMS Base Styles ---- */
+
+
+/* ---- Enhanced booking.css ---- */
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 55px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), #60a5fa);
+}
+
+/* Form Layout */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Form Section Card */
+.booking-section {
+  background: #fff;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+  margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  transition: all 0.25s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* Readonly Fields */
+input[readonly] {
+  background: #f3f4f6;
+  color: #6b7280;
+  border-color: #e5e7eb;
+  cursor: not-allowed;
+}
+
+/* Checkbox */
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.checkbox-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+.checkbox-row label {
+  margin: 0;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Cost Summary */
+.cost-summary {
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border: 1px solid rgba(37,99,235,0.15);
+  text-align: center;
+}
+
+.cost-summary .label {
+  color: #4b5563;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+/* Price */
+#cost-display {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--success);
+  letter-spacing: 0.5px;
+}
+
+/* Cost Note */
+.cost-note {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* Error Message */
+#form-error {
+  display: none;
+  margin-bottom: 18px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 14px 16px;
+  border-radius: 12px;
+}
+
+.error-msg {
+  margin-top: 5px;
+}
+
+/* Booking Button */
+button[type="submit"] {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  box-shadow: 0 8px 20px rgba(37,99,235,0.25);
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(37,99,235,0.3);
+}
+
+/* Card Animation */
+.booking-section,
+.cost-summary {
+  transition: transform 0.3s ease;
+}
+
+.booking-section:hover,
+.cost-summary:hover {
+  transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #cost-display {
+    font-size: 1.7rem;
+  }
+
+  .booking-section,
+  .cost-summary {
+    padding: 18px;
+  }
+}
+
+/* ===== Global Modern Navbar ===== */
+
+nav#main-nav {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 24px;
+  min-height: 64px;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-brand {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: rgba(255,255,255,0.18);
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#welcome-user {
+  color: white;
+  font-weight: 500;
+  padding: 0;
+}
+
+#logout-btn {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 10px;
+  padding: 8px 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+}
+
+#logout-btn:hover {
+  background: rgba(255,255,255,0.22);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+
+  nav#main-nav {
+    padding: 12px 16px;
+  }
+
+  .nav-links {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .nav-user {
+    width: 100%;
+    margin-top: 12px;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking History — Parcel Management System</title>
+  <link rel="stylesheet" href="../shared/navbar.css">
+  <link rel="stylesheet" href="history-customer.css">
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <div class="container">
+    <div class="card">
+      <h2>Your Booking History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Customer ID</th>
+            <th>Booking ID</th>
+            <th>Booking Date</th>
+            <th>Receiver Name</th>
+            <th>Delivered Address</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="history-table-body"></tbody>
+      </table>
+      <p id="no-bookings">You have no previous bookings yet.</p>
+      <div class="pagination"> 
+        <button type="button" id="prev-btn">Previous</button>
+        <span id="page-info"></span>
+        <button type="button" id="next-btn">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../shared/pms-helpers.js"></script>
+  <script src="../shared/navbar.js"></script>
+  <script src="history-customer.js"></script>
+</body>
+</html>

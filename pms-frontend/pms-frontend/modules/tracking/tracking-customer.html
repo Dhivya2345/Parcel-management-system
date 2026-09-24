@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Parcel — Parcel Management System</title>
+  <link rel="stylesheet" href="../shared/navbar.css">
+  <link rel="stylesheet" href="tracking-customer.css">
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <div class="container">
+    <div class="card">
+      <h2>Track Your Parcel</h2>
+      <p>Enter the 12-digit Booking ID you received after booking to check its status.</p>
+      <form id="tracking-form" novalidate>
+        <div class="search-row">
+          <div class="form-group">
+            <label for="bookingId">Booking ID</label>
+            <input type="text" id="bookingId" maxlength="12" placeholder="12 digit Booking ID">
+            <span class="error-msg" id="bookingId-error"></span>
+          </div>
+          <button type="submit" id="search-btn">Search</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="tracking-result" class="card">
+      <h2>Parcel Status</h2>
+      <div class="result-field">
+        <label>Status</label>
+        <div class="value"><span class="status-badge" id="result-status"></span></div>
+      </div>
+      <div class="result-field">
+        <label>Receiver Name</label>
+        <div class="value" id="result-receiverName"></div>
+      </div>
+      <div class="result-field">
+        <label>Booking Date</label>
+        <div class="value" id="result-bookingDate"></div>
+      </div>
+    </div>
+
+    <div id="tracking-not-found" class="card">
+      <p class="alert-error">No booking found for that Booking ID. Please check the number and try again.</p>
+    </div>
+  </div>
+
+  <script src="../shared/pms-helpers.js"></script>
+  <script src="../shared/navbar.js"></script>
+  <script src="tracking-customer.js"></script>
+</body>
+</html>

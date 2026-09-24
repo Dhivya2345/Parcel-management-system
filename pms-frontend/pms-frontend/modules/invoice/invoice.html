@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice — Parcel Management System</title>
+  
+  <link rel="stylesheet" href="invoice.css">
+</head>
+<body>
+
+  <nav id="main-nav">
+    <span class="nav-brand">Parcel Management System</span>
+    <div class="nav-user">
+      <span id="welcome-user"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div id="invoice-view" class="card">
+      <div class="invoice-header">
+        <h1>Invoice</h1>
+        <span class="invoice-id">Booking ID: <strong id="inv-bookingId"></strong></span>
+      </div>
+
+      <div class="invoice-grid">
+        <div class="invoice-field">
+          <label>Receiver Name</label>
+          <div class="value" id="inv-receiverName"></div>
+        </div>
+        <div class="invoice-field">
+          <label>Receiver Address</label>
+          <div class="value" id="inv-receiverAddress"></div>
+        </div>
+        <div class="invoice-field">
+          <label>Receiver Pin</label>
+          <div class="value" id="inv-receiverPin"></div>
+        </div>
+        <div class="invoice-field">
+          <label>Receiver Mobile</label>
+          <div class="value" id="inv-receiverMobile"></div>
+        </div>
+        <div class="invoice-field">
+          <label>Parcel Weight (g)</label>
+          <div class="value" id="inv-parcelWeight"></div>
+        </div>
+        <div class="invoice-field">
+          <label>Parcel Contents Description</label>
+          <div class="value" id="inv-parcelContents"></div>
+        </div>
+        <div class="invoice-field">
+          <label>Parcel Delivery Type</label>
+          <div class="value" id="inv-deliveryType"></div>
+        </div>
+        <div class="invoice-field">
+          <label>Parcel Packing Preference</label>
+          <div class="value" id="inv-packingPreference"></div>
+        </div>
+        <div class="invoice-field">
+          <label>Parcel Pickup Time</label>
+          <div class="value" id="inv-pickupTime"></div>
+        </div>
+        <div class="invoice-field">
+          <label>Parcel Dropoff Time</label>
+          <div class="value" id="inv-dropoffTime"></div>
+        </div>
+        <div class="invoice-field">
+          <label>Parcel Service Cost</label>
+          <div class="value invoice-cost" id="inv-serviceCost"></div>
+        </div>
+        <div class="invoice-field">
+          <label>Parcel Payment Time</label>
+          <div class="value" id="inv-paymentTime"></div>
+        </div>
+      </div>
+
+      <div class="invoice-actions">
+        <button type="button" id="print-btn">Print</button>
+        <a class="back-link" id="back-link" href="../home/customer-home.html">Back to Home</a>
+      </div>
+    </div>
+
+    <div id="not-found" class="card">
+      <p class="alert-error">No booking found for this Booking ID.</p>
+      <div class="invoice-actions">
+        <a class="back-link" id="back-link-notfound" href="../home/customer-home.html">Back to Home</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../shared/pms-helpers.js"></script>
+  <script src="invoice.js"></script>
+</body>
+</html>

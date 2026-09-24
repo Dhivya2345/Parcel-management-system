@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment — Parcel Management System</title>
+  
+  <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+
+  <nav id="main-nav">
+    <span class="nav-brand">Parcel Management System</span>
+    <div class="nav-user">
+      <span id="welcome-user"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div id="form-error" class="alert-error card"></div>
+
+    <!-- Section 1: Bill view -->
+    <div id="payment-form">
+      <div class="card">
+        <h2 class="section-title">Booking Bill</h2>
+        <div class="form-group">
+          <label>Bill Amount</label>
+          <div id="bill-amount">₹0.00</div>
+        </div>
+        <div class="form-group">
+          <label for="modeOfPayment">Mode of Payment</label>
+          <select id="modeOfPayment">
+            <option value="">Select mode of payment</option>
+            <option value="Debit">Debit</option>
+            <option value="Credit">Credit</option>
+          </select>
+          <span class="error-msg" id="modeOfPayment-error"></span>
+        </div>
+        <button type="button" id="pay-now-btn">Pay Now</button>
+        <a class="back-link" href="../booking/booking.html">Back to Home</a>
+      </div>
+    </div>
+
+    <!-- Section 2: Card entry -->
+    <form id="card-form" novalidate>
+      <div class="card">
+        <div class="card-title-display" id="card-title-display">Credit Card</div>
+
+        <div class="form-group">
+          <label for="cardNumber">Card No</label>
+          <input type="text" id="cardNumber" maxlength="16" placeholder="16 digit card number">
+          <span class="error-msg" id="cardNumber-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="cardHolder">Card Holder Name</label>
+          <input type="text" id="cardHolder" placeholder="Name as on card">
+          <span class="error-msg" id="cardHolder-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="expiry">Expiry Date</label>
+          <input type="text" id="expiry" maxlength="5" placeholder="MM/YY">
+          <span class="error-msg" id="expiry-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input type="password" id="cvv" maxlength="3" placeholder="3 digit CVV">
+          <span class="error-msg" id="cvv-error"></span>
+        </div>
+
+        <button type="submit" id="make-payment-btn">Make Payment</button>
+      </div>
+    </form>
+
+    <!-- Payment success message -->
+    <div id="payment-success" class="card">
+      <p class="alert-success" id="payment-success-msg"></p>
+    </div>
+
+  </div>
+
+  <script src="../shared/pms-helpers.js"></script>
+  <script src="payment.js"></script>
+</body>
+</html>

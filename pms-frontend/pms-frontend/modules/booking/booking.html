@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Service — Parcel Management System</title>
+  <link rel="stylesheet" href="../shared/navbar.css">
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <div class="container">
+    <div id="form-error" class="alert-error card"></div>
+
+    <form id="booking-form" novalidate>
+      <div class="card">
+        <h2 class="section-title">1. Sender Information</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="senderName">Name</label>
+            <input type="text" id="senderName" readonly>
+          </div>
+          <div class="form-group">
+            <label for="senderAddress">Address</label>
+            <input type="text" id="senderAddress" readonly>
+          </div>
+          <div class="form-group">
+            <label for="senderContact">Contact</label>
+            <input type="text" id="senderContact" readonly>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">2. Receiver Information</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="receiverName">Name</label>
+            <input type="text" id="receiverName" placeholder="Receiver's full name">
+            <span class="error-msg" id="receiverName-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="receiverAddress">Address</label>
+            <input type="text" id="receiverAddress" placeholder="Delivery address">
+            <span class="error-msg" id="receiverAddress-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="receiverPin">Pin Code</label>
+            <input type="text" id="receiverPin" placeholder="6 digit PIN code" maxlength="6">
+            <span class="error-msg" id="receiverPin-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="receiverContact">Contact</label>
+            <input type="text" id="receiverContact" placeholder="10 digit mobile number" maxlength="10">
+            <span class="error-msg" id="receiverContact-error"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">3. Parcel Details</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="parcelWeight">Weight (kg)</label>
+            <input type="number" id="parcelWeight" min="0.1" max="50" step="0.1" placeholder="e.g. 2.5">
+            <span class="error-msg" id="parcelWeight-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="parcelSize">Size</label>
+            <select id="parcelSize">
+              <option value="">Select size</option>
+              <option value="Small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
+            </select>
+            <span class="error-msg" id="parcelSize-error"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="parcelContents">Contents Description</label>
+          <textarea id="parcelContents" rows="3" placeholder="Describe the parcel contents for tracking and safety"></textarea>
+          <span class="error-msg" id="parcelContents-error"></span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">4. Shipping Options</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="deliverySpeed">Delivery Speed</label>
+            <select id="deliverySpeed">
+              <option value="">Select delivery speed</option>
+              <option value="Standard">Standard (₹50/kg)</option>
+              <option value="Express">Express (₹100/kg)</option>
+              <option value="Overnight">Overnight (₹150/kg)</option>
+            </select>
+            <span class="error-msg" id="deliverySpeed-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="packaging">Packaging Preference</label>
+            <select id="packaging">
+              <option value="">Select packaging</option>
+              <option value="Standard Packaging">Standard Packaging</option>
+              <option value="Custom Packaging">Custom Packaging</option>
+              <option value="Eco-friendly Packaging">Eco-friendly Packaging</option>
+              <option value="Fragile Item handling">Fragile Item handling</option>
+            </select>
+            <span class="error-msg" id="packaging-error"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">5. Date and Time Selection</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="pickupTime">Preferred Pickup Date & Time</label>
+            <input type="datetime-local" id="pickupTime">
+            <span class="error-msg" id="pickupTime-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="dropoffTime">Preferred Drop-off Date & Time</label>
+            <input type="datetime-local" id="dropoffTime">
+            <span class="error-msg" id="dropoffTime-error"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">6. Service Cost</h2>
+        <div class="form-group">
+          <label>Estimated Cost</label>
+          <div id="cost-display">₹0</div>
+        </div>
+        <p class="cost-note">Payment method is selected on the next screen.</p>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">7. Additional Services</h2>
+        <div class="checkbox-row form-group">
+          <input type="checkbox" id="insurance">
+          <label for="insurance">Add Insurance</label>
+        </div>
+        <div class="checkbox-row form-group">
+          <input type="checkbox" id="trackingService">
+          <label for="trackingService">Add Tracking Service</label>
+        </div>
+      </div>
+
+      <div class="card">
+        <button type="submit" id="submit-btn">Proceed to Payment</button>
+        
+      </div>
+    </form>
+  </div>
+
+  <script src="../shared/pms-helpers.js"></script>
+  <script src="../shared/navbar.js"></script>
+  <script src="booking.js"></script>
+</body>
+</html>

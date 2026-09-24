@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery Update — Parcel Management System</title>
+  <link rel="stylesheet" href="../shared/navbar.css">
+  <link rel="stylesheet" href="delivery-update.css">
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <div class="container">
+    <div class="card">
+      <h2>Find a Package</h2>
+      <p>Search by Booking ID to update its delivery status.</p>
+      <div class="search-row">
+        <div class="form-group">
+          <label for="searchBookingId">Booking ID</label>
+          <input type="text" id="searchBookingId" placeholder="12 digit Booking ID">
+        </div>
+        <button type="button" id="search-btn">Search</button>
+      </div>
+      <p id="search-not-found" class="alert-error">No booking found for that Booking ID.</p>
+    </div>
+
+    <div id="booking-details" class="card">
+      <h2>Package Details</h2>
+      <div class="detail-grid">
+        <div class="detail-field">
+          <label>Booking ID</label>
+          <div class="value" id="det-bookingId"></div>
+        </div>
+        <div class="detail-field">
+          <label>Customer ID</label>
+          <div class="value" id="det-customerId"></div>
+        </div>
+        <div class="detail-field">
+          <label>Receiver Name</label>
+          <div class="value" id="det-receiverName"></div>
+        </div>
+        <div class="detail-field">
+          <label>Receiver Address</label>
+          <div class="value" id="det-receiverAddress"></div>
+        </div>
+        <div class="detail-field">
+          <label>Current Status</label>
+          <div class="value"><span class="status-badge" id="det-status"></span></div>
+        </div>
+        <div class="detail-field">
+          <label>Booking Date</label>
+          <div class="value" id="det-bookingDate"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="delivery-update-card" class="card">
+      <h2>Update Delivery Status</h2>
+      <form id="delivery-form" novalidate>
+        <div class="form-group">
+          <label for="newStatus">New Status</label>
+          <select id="newStatus">
+            <option value="">Select new status</option>
+            <option value="Picked up">Picked up</option>
+            <option value="In Transit">In Transit</option>
+            <option value="Delivered">Delivered</option>
+            <option value="Returned">Returned</option>
+          </select>
+          <span class="error-msg" id="newStatus-error"></span>
+        </div>
+        <button type="submit" id="update-status-btn">Update Status</button>
+      </form>
+      <p id="update-success" class="alert-success"></p>
+    </div>
+  </div>
+
+  <script src="../shared/pms-helpers.js"></script>
+  <script src="../shared/navbar.js"></script>
+  <script src="delivery-update.js"></script>
+</body>
+</html>
