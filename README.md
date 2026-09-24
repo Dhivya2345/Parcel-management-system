@@ -46,24 +46,7 @@ Tools
 - Visual Studio Code
 - Git & GitHub
 
- 
-# Application Flow
 
-Customer Registration
-        ↓
-     Login
-        ↓
-   Customer Home
-        ↓
-   Book Parcel
-        ↓
-   Make Payment
-        ↓
-     Invoice
-        ↓
-   Track Parcel
-        ↓
-  View Parcel History
 
 # Main Modules
 
