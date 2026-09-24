@@ -46,31 +46,6 @@ Tools
 - Visual Studio Code
 - Git & GitHub
 
-📁 Project Structure
-
-Parcel-Management-System/
-│
-├── frontend/
-│   ├── index.html
-│   ├── index.css
-│   │
-│   ├── modules/
-│   │   ├── login/
-│   │   ├── home/
-│   │   ├── booking/
-│   │   ├── payment/
-│   │   ├── invoice/
-│   │   ├── tracking/
-│   │   ├── history/
-│   │   └── shared/
-│   │
-│   └── ...
-│
-└── backend/
-    ├── src/
-    ├── pom.xml
-    └── ...
-
  
 # Application Flow
 
